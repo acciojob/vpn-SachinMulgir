@@ -28,6 +28,7 @@ public class AdminServiceImpl implements AdminService {
         admin.setUsername(username);
         admin.setPassword(password);
 
+        adminRepository1.save(admin);
         return admin;
 
     }
@@ -36,15 +37,15 @@ public class AdminServiceImpl implements AdminService {
     public Admin addServiceProvider(int adminId, String providerName) {
         Admin admin= adminRepository1.findById(adminId).get();
 
-        ServiceProvider serviceProvider = new ServiceProvider();
-        serviceProvider.setAdmin(admin);
-        serviceProvider.setName(providerName);
-
-        admin.getServiceProviders().add(serviceProvider);
-
-        adminRepository1.save(admin);
-
-        return admin;
+//        ServiceProvider serviceProvider = new ServiceProvider();
+//        serviceProvider.setAdmin(admin);
+//        serviceProvider.setName(providerName);
+//
+//        admin.getServiceProviders().add(serviceProvider);
+//
+//        adminRepository1.save(admin);
+//
+//        return admin;
 
 
     }
